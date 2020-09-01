@@ -6,6 +6,7 @@ using namespace std;
 //This is a comment
 
 int main() {
-    cout << "Hello World\n";
+    cout << "Hello World\n"; //output statement
+    "hello world";
     return 0;
 }
