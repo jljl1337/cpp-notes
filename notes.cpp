@@ -10,6 +10,11 @@ int main() {
     cout << "Hello World\n";
 
 
+    //input statement
+    int input;
+    cin >> input;
+
+
     //variable
     int number; //declaration
     number = 3; //initialisation
