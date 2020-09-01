@@ -6,7 +6,14 @@ using namespace std;
 //This is a comment
 
 int main() {
-    cout << "Hello World\n"; //output statement
-    "hello world";
+    //output statement
+    cout << "Hello World\n";
+
+
+    //variable
+    int number; //declaration
+    number = 3; //initialisation
+
+
     return 0;
 }
