@@ -1,28 +1,24 @@
 #include <iostream>
-
 using namespace std;
-//this can be "using std::cout"
+// this can be "using std::cout"
 
-//This is a comment
+// This is a single line comment
 /*
-This is a comment as well
+This is a multi-comment as well
 */
 
 int main() {
-    //output statement
-    cout << "Hello World\n";
+  // output statement
+  cout << "Hello World\n"; // or cout << "Hello World" << endl;
 
+  // input statement
+  int input;
+  cin >> input;
 
-    //input statement
-    int input;
-    cin >> input;
+  // variable
+  int number; // declaration
+  number = 3; // initialisation
+  // abc =/= Abc =/= ABC
 
-
-    //variable
-    int number; //declaration
-    number = 3; //initialisation
-    //abc =/= Abc =/= ABC
-
-
-    return 0;
+  return 0;
 }
