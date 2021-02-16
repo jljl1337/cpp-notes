@@ -58,7 +58,7 @@ int main() {
 
     // String
     char string1[] = "amy";
-    char * string2 = "amy"; // this create error for C++11
+    char * string2 = "amy"; // this create warning for C++11
 
     // Logical 
     bool boolean_value = true; // boolean value
