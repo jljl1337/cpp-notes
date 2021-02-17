@@ -1,4 +1,6 @@
+#include <ios>
 #include <iostream>
+#include <iomanip>
 using namespace std;
 // This can be replaced by using "std::cout"
 
@@ -9,6 +11,7 @@ This is a multiline-comment
 
 // only one function can be named "main", and "Main" will still create error
 int main() {
+
     // Output statement
     cout << "Hello World" << endl;
     // Or cout << "Hello World" << "\n";
@@ -20,6 +23,7 @@ int main() {
     int input;
     cin >> input;
     cout << "You have inputted the number " << input << endl;
+    // Number input are separated by white space (space / new line)
 
 
     // Variable
@@ -54,7 +58,7 @@ int main() {
     character = character + 1;
     cout << character << endl; // 'e'
     // '\' is a escape character, which can help writing special character,
-    // like tab or "
+    // like tab ('\t') or " ('\"')
 
     // String
     char string1[] = "amy";
@@ -95,5 +99,82 @@ int main() {
     // this will return the memory space used of a variable 
     // or a type of variable
     cout << sizeof(int) << endl; // 4
+
+
+    // Operator
+    // Assignment operator
+    int operator_assign = 3; // this statement will return the value 3 too
+    int chain_1, chain_2;
+    chain_1 = (chain_2 = 2); // chain_1 = chain_2 = 2
+    chain_1 = chain_2 = 2; // the same as above
+
+    // Increment / Decrement operators
+    int increment = 3;
+    ++increment; // increment = 4 (OR increment++, which is not prefered)
+    int decrement = 5;
+    cout << --decrement + 3 << endl; // 7, 
+    // while decrement = 4 after this statement
+    // as "--decrement" decrease the variable first, then return the new value
+    // the position of --/++ decides altering the value first or later
+
+    // Division and Modulus operators
+    // Division
+    cout << 5 / 2 << endl; // 2 (quotient)
+    // Modulus
+    cout << 5 % 2 << endl; // 1 (remainder)
+
+
+    // Changing the width of output
+    cout.width(4); // only effective for ONE output
+    // has to write "#include <iomanip>" at the top first
+    cout << 12 << endl; // "  12"
+    // Leading space will be added if the original output width is smaller
+    cout << 12 << endl; // "12"
+    // Or cout << setw(4) << 12 << endl;
+
+
+    // Setting the format and precision of floating point output
+    
+    // has to write "#include <iomanip>" at the top first
+    // default is 6 precision, i.e. 5 decimal points or scientific,
+    // depending on the value
+    
+    // Fixed point notation
+    cout << fixed; // the effect is permanent
+    cout << 1.34 << endl; // 1.340000
+    cout << 0.000000000000134 << endl; // 0.000000
+
+    // Scientific notation
+    cout << scientific;
+    cout << 1.34 << endl; // 1.340000e+00
+    cout << 1.2345671 << endl; // 1.234567e+00
+    cout << 1.2345678 << endl; // 1.234568e+00, due to round off
+
+    // Precision
+    cout << setprecision(2);
+    cout << 1.34 << endl; // 1.3, by default it set significant figures
+    // with "fixed" or "scientific",
+    // it means number of figures AFTER the decimal point
+    cout << fixed << 0.003 << endl; // 0.00
+    cout << scientific << 0.003 << endl; // 3.00e-03
+    cout << defaultfloat; // default floating point behaviour
+
+
+    // Other cout manipulator
+    // Fill
+    cout << setfill('*');
+    cout << setw(5) << 23 << endl; // ***23
+
+    // Radix
+    cout << oct << 11 << endl; // 13
+    cout << hex << 11 << endl; // b
+    cout << dec << 11 << endl; // b
+
+    // Alignment
+    cout << setfill('*');
+    cout << setw(5);
+    cout << setiosflags(ios::left) << 5.6 << endl; // 5.6**
+
+
     return 0;
 }
