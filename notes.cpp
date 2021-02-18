@@ -176,5 +176,48 @@ int main() {
     cout << setiosflags(ios::left) << 5.6 << endl; // 5.6**
 
 
+    // Logical operator
+    bool logic1, logic2;
+    logic1 = true;
+    logic2 = false;
+    cout << !logic1 << endl; // not
+    cout << (logic1 && logic2) << endl; // and
+    cout << (logic1 || logic2) << endl; // or
+    cout << (logic1 == logic2) << endl; // equal
+    cout << (logic1 != logic2) << endl; // not equal
+    cout << (logic1 < logic2) << endl; // less than
+    cout << (logic1 >= logic2) << endl; // greater than or equal to
+
+    // Short-circuit evaluation
+    // if the first expression is false (true), the expression after && (||)
+    // will not be evaluated 
+
+
+    // If statement
+    int if_num = 3;
+    if (if_num > 0)
+        cout << "if_num is a positive number";
+    else
+        cout << "if_num is a non-positive number";
+    // if the there are more than one statement in one situation,
+    // use {} to group them together
+
+
+    // Switch statement
+    int switch_num = 3;
+    switch (switch_num) { // expression inside () must be integer type 
+                          // (including char)
+        case 0:
+            cout << "switch_num is 0" << endl;
+            break;
+        case 1:
+            cout << "switch_num is 1" << endl;
+            break;
+        default:
+            cout << "switch_num is neither 0 nor 1" << endl;
+            break;
+    }
+
+
     return 0;
 }
