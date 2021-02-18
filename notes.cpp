@@ -219,5 +219,73 @@ int main() {
     }
 
 
+    // Conditinoal operator
+    int condi_a = 3, condi_b = 5;
+    (condi_a > condi_b) ? cout << condi_a << endl : cout << condi_b << endl;
+    // outputing the larger number in one line
+
+
+    // For loop
+    for (int for_num = 0; for_num < 3; ++for_num) {
+    // int for_num = 0: statement(s) executed before entering the loop
+    // for_num < 3: the loop will quit if the statement returns true
+    // ++for_num: statement(s) executed after each iteration
+    // These three types of statements are separated by ;
+        cout << "for_num is " << for_num << endl; // this will run for 3 times
+    }
+    // {} can be neglected if there is only one statement
+    // for_num cannot be accessed here as it was declared inside the for loop
+    
+    // More than one statement can be included for the first and third type:
+    for (int for_1 = 0, for_2 = 0; for_1 < 4; ++for_1, ++for_2)
+        cout << for_1 << ' ' << for_2 << endl;
+
+
+    // While loop (pre-tested)
+    int while_num;
+    cin >> while_num;
+    while (while_num <= 0) { // while_num < 0: execute loop body if the 
+                            // expression returns true
+        cout << "Please input a positive number" << endl;
+        cin >> while_num;
+    }
+    // This can be used for validation, the above is one of the example
+    // {} can be neglected if there is only one statement
+
+
+    // Do while loop (post-tested)
+    int do_while_num;
+    do {
+        cin >> do_while_num;
+        if (do_while_num <= 0) {
+            cout << "Please input a positive number" << endl;
+            cin >> do_while_num;
+        }
+    } while (do_while_num <= 0);
+    // This has the same effect as the above, but checking for one more time
+    // remember to put ; after the while statement of do while loop
+    // {} can be neglected if there is only one statement
+    
+
+    // Break and continue statements
+    int break_num;
+    while (1) {
+        cin >> break_num;
+        if (break_num <= 0) {
+            cout << "Please input a positive number" << endl;
+        } else {
+            break; // exit the (innermost) loop
+        }
+    }
+
+    // printing odd number below 5
+    for (int continue_num = 0; continue_num < 5; ++continue_num) {
+        if (continue_num % 2 == 0) {
+            continue; // jump to next iteration
+        } else {
+            cout << continue_num << endl;
+        }
+    }
+
     return 0;
 }
