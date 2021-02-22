@@ -168,7 +168,7 @@ int main() {
     // Radix
     cout << oct << 11 << endl; // 13
     cout << hex << 11 << endl; // b
-    cout << dec << 11 << endl; // b
+    cout << dec << 11 << endl; // 11
 
     // Alignment
     cout << setfill('*');
