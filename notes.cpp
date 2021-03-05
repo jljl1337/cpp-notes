@@ -1,6 +1,7 @@
 #include <ios>
 #include <iostream>
 #include <iomanip>
+#define N 10
 using namespace std;
 // This can be replaced by using "std::cout"
 
@@ -277,7 +278,6 @@ int main() {
             break; // exit the (innermost) loop
         }
     }
-
     // printing odd number below 5
     for (int continue_num = 0; continue_num < 5; ++continue_num) {
         if (continue_num % 2 == 0) {
@@ -286,6 +286,35 @@ int main() {
             cout << continue_num << endl;
         }
     }
+
+
+    // Array
+    // type name[size]
+    // String is array of characters!
+    int num_array1[20]; // either define with size
+    int num_array3[] = {2, 3}; // or define the content of the array
+    int num_array2[N]; // the size is best defined using #define
+    // N is defined at the top of the file,
+    // Normal variable can be used, but some compiler may create error
+
+    // Array initialisation
+    int array_init1[2] = {1, 2}; // either define it straight away
+    int array_init2[20] = {1, 2}; // the first two are 1 and 2, the remaining
+    // are all 0
+    int array_init3[20] = {0}; // initialise all elements to be 0
+
+    // Accessing elements of array
+    // All index starts from 0
+    int num_array4[] = {3, 4};
+    cout << num_array4[0] << endl; // 3
+    cout << num_array4[1] << endl; // 4
+
+    // 2D array
+    int array_2d1[2][3];
+    int array_2d2[2][3] = {{1,2,3}, {4,5,6}};
+    int array_2d3[][3] = {1, 2, 3, 4, 5, 6}; 
+    // size of first dimension can be neglected if the content is defined
+
 
     return 0;
 }
