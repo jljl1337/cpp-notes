@@ -55,6 +55,79 @@ int main() {
     func5(); // 1
     func5(); // 2
 
+    // Character
+    // Input buffer
+    // if more than required char is inputted, the extra one will be stored in
+    // a buffer, which can be retrieved later
+    char char1, char2;
+    cout << "2 characters: ";
+    cin >> char1; // '1' if the user input "12", '2' will be in the buffer
+    cin >> char2; // '2'
+
+
+    // String
+    // type: cstring / string in <string> library
+    // cstring:
+    // ended by '\0' (null character), so the size will -1, such as:
+    char string1[11]; // this can store at most 9 characters
+    cout << "9 characters: ";
+    cin >> string1;
+    cout << string1 << endl;
+    // so declare with required size + 1 when there is no intialisation
+    // Also, cannot intialise a string after declaration
+
+    // cin will terminate when encountering whitespace characers, such as
+    // space, tab, enter etc.
+
+    // cin method
+    // get(char) (read one character)
+    cout << "1 character: " << endl;
+    char cin_get;
+    cin.get(cin_get);
+    cout << "cin_get: " << cin_get << endl;
+
+    // getline(string, size) (read a line of text)
+    // if length of input > size - 1 or there are other errors,
+    // some internal state flags of cin will be set
+    // method clear() is required to reset those flags
+    char string2[5], string3[5];
+    cout << "4 characters: ";
+    cin.getline(string2, 5);
+    cin.clear(); // if the user input more than 4 characters, the extra one
+    // will get into string3
+    // but it will skip string3 directly if there is no clear()
+    cout << "4 characters: ";
+    cin.getline(string3, 5);
+    cout << string2 << endl;
+    cout << string3 << endl;
+
+    // Why '\0'?
+    // it is used to distinguish continously stored string
+
+    // Passing string as a parameter
+    // size is optional
+
+    // cstring functions in <cstring>
+    char string4[10];
+    char string5[] = "5";
+
+    // copying the content of string5 to string4
+    strcpy(string4, string5);
+    cout << "string4: " << string4 << endl; // string4: "5"
+
+    // append the content of string5 to string4
+    strcat(string4, string5); 
+    cout << "string4: " << string4 << endl; // string4: "55"
+
+    // comparing string4 and string5 lexicographically character by character
+    cout << strcmp(string4, string5) << endl; // 53
+    // = 0 -> string4 == string5
+    // > 0 -> string4 > string5
+    // < 0 -> string4 < string5
+
+    // finding the length of character (non-null characters)
+    cout << "length of string4: " << strlen(string4) << endl; // 2
+
     return 0;
 }
 
