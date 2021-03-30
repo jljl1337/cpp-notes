@@ -1,9 +1,10 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 // Function
 // define: type name(input) {body}
-// MUST define before main function
+// MUST declare before main function
 int func1(int num) {
     return ++num;
     // the keyword "return" will give out the value when the function is called
@@ -127,6 +128,61 @@ int main() {
 
     // finding the length of character (non-null characters)
     cout << "length of string4: " << strlen(string4) << endl; // 2
+
+
+    // File IO
+    // add "#include <fstream>" at the top of the file first
+
+    // declare a object of class ifstream or ofstream first
+    ifstream fin;
+    ofstream fout;
+
+    // intialise for demo
+    fout.open("abc.txt");
+    fout << "fileInput";
+    fout.close();
+
+    char fileInput[50];
+    // open a file for input
+    fin.open("abc.txt");
+    // read from a file
+    fin >> fileInput;
+    cout << fileInput << endl; // "fileInput"
+    // close the file after reading from it
+    fin.close();
+
+    char fileOutput[] = "fileOutout";
+    // open a file for output
+    fout.open("abc.txt");
+    // output to file (default to rewrite the file)
+    fout << fileOutput << endl;
+    // close the file after outputting to it
+    fout.close();
+
+    // Different mode for file IO
+    // appending content to the file instead of rewriting it
+    fout.open("abc.txt", ios::app);
+    fout << "appended content";
+    fout.close();
+    // ios::in -> open for input operations
+    // ios::out -> open for output operations
+    // ios::binary -> open in binary mode
+    // ios::ate -> set the initial position at the end of the file
+    // ios::trunc -> rewrite the file
+
+    // Detecting IO failures
+    // fin.fail() / fout.fail() (Boolean value)
+    // (one may use exit() to terminate the program)
+
+    // Detecting end-of-file
+    // fin.eof() (Boolean value)
+    // fin >> x alse returns 0 if reach end-of-file,
+    // so one may use "while (fin >> x) {...}"
+    fin.open("abc.txt");
+    while (fin >> fileInput) {
+        cout << fileInput << endl;
+    }
+
 
     return 0;
 }
