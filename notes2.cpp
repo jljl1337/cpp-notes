@@ -182,6 +182,7 @@ int main() {
     while (fin >> fileInput) {
         cout << fileInput << endl;
     }
+    fin.close();
 
 
     return 0;
