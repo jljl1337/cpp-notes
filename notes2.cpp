@@ -185,6 +185,44 @@ int main() {
     fin.close();
 
 
+    // Pointer part 1
+    // pointer is a just variable storing the address of another variable,
+    // and you can refer the content of the address by adding * at the left
+    // the type of pointer should be the same as the one it points to
+
+    int integer = 10;
+    // Declaration of a pointer
+    int *ptrInt;
+    // Definition of pointer
+    ptrInt = &integer;
+    // "&integer" just return the address of the variable integer
+    cout << *ptrInt << endl; // 10
+    // "*ptrInt" just return the content of the address stored by ptrInt
+    cout << ptrInt << endl; // this will output the address of "integer"
+
+    // constant pointer
+    // the pointer is constant, but the variable it points to may not be
+    int num = 64;
+    // MUST define when declare
+    int *const ptrNum = &num;
+    *ptrNum = 65; // numPoint is changed only, ptrNum is not changed
+    cout << num << endl; // 65
+
+    // pointer to constant
+    // the variable pointed is constant, the the pointer point to it may not be
+    const int constNum1 = 10;
+    const int constNum2 = 20;
+    int const *ptrCon;
+    // or const int *ptrCon;
+    ptrCon = &constNum1;
+    ptrCon = &constNum2; // ptrCon is changed only, constNum is not changed
+    cout << *ptrCon << endl; // 20
+
+    // call by reference
+    // function: int f(int *a) {...}
+    // recalling the function: f(&num);
+
+
     return 0;
 }
 
